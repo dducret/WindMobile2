@@ -41,14 +41,14 @@ Handling errors
 
 The API attempts to return appropriate HTTP codes for every request.
 
-`200 (OK)`  
-`401 (Unauthorized)`           : Authentication missing or incorrect  
-`403 (Forbidden)`              : Missing User-Agent that indentifies your application  
-`404 (Not Found)`
-`415 (Unsupported Media Type`)
-`429 (Too Many Requests)`  
-`500 (Internal Server Error)`  : Something get wrong  
-`503 (Service Unavailable)`  
+    200 (OK)  
+    401 (Unauthorized)	          : Authentication missing or incorrect  
+    403 (Forbidden)               : Missing User-Agent that indentifies your application  
+    404 (Not Found)  
+    415 (Unsupported Media Type)  
+    429 (Too Many Requests)  
+    500 (Internal Server Error)   : Something get wrong  
+    503 (Service Unavailable)  
 
 
 API
@@ -56,29 +56,30 @@ API
 
 Station
 
-* Detail
-* List
+- [Detail](#station_detail)
+- [List](#station_list)
 
 User
 
-* Authentication
+- [Authentication](#user_authentication)
 
 Weather
 
-* Data
-* Wind
-* WindSensor
-* WindForcast
+- Data
+- Wind
+- WindSensor
+- WindForcast
 
 
-### Station detail
+### <a id="station_detail"></a> Station detail
 
 The station detail information
 
     http://api.youprovider.com/2.0/station/:id 
 
-#### Parameters
-id: the id od the station    
+Parameters
+
+* **id** the id of the station    
 
 ```json
 {
@@ -138,17 +139,18 @@ id: the id od the station
 ```
 
 
-### Station list
+### <a id="station_list"> Station list
 
 The list with the details of each station
 
-    http://api.youprovider.com/2.0/station?lat=:lat45&lon=:lon&range=:range&status=green&status=orange
+    http://api.youprovider.com/2.0/station?lat=46.630544&lon=6.511739&range=100&status=green&status=orange
 
-#### Parameters
-lat    : WGS84 user latitude for range  
-lon    : WGS84 rser longitude for range  
-range  : The area zone in km. If wgs84lat and/or wgs84lon provided default range is 50
-    status : 'green', 'orange' or 'red'. Default is 'green' only
+Parameters
+
+* **lat** WGS84 user latitude for range  
+* **lon** WGS84 rser longitude for range  
+* **range** The area zone in km. If lat and/or lon is provided default range is 50
+* **status** 'green', 'orange' or 'red'. Default is 'green' only
 
 
 ```json
